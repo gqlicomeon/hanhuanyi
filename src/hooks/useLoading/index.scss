@@ -1,0 +1,30 @@
+@keyframes myRotate{
+    0%{
+        transform: rotateZ(0);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+.loading-wrapper{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    z-index: 99;
+    .loading{
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        animation: myRotate 2.5s ease-out 0s infinite;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
