@@ -7,7 +7,7 @@ interface PropType{
     setMusicVisible?():void;
 }
 const FireWork: React.FC<PropType> = (props: PropType) => {
-    const [fireWork, setFireWork] = useIframe('http://hanhuanyi.top:3000/firework/');
+    const [fireWork, setFireWork] = useIframe('http://www.hanhuanyi.top:3000/firework/');
     useEffect(()=>{
         props.setMusicVisible && props.setMusicVisible();
         setFireWork(true);

@@ -11,7 +11,7 @@ interface PropType{
 const NewYear: React.FC<PropType> = (props: PropType) => {
     const history = useHistory();
     const [isConten1End, setIsConten1End] = useState<boolean>(false);
-    const [starrysky, setStarrysky] = useIframe('http://hanhuanyi.top:3000/starrysky/');
+    const [starrysky, setStarrysky] = useIframe('http://www.hanhuanyi.top:3000/starrysky/');
     const [text1, setBegin1, isEnd1] = useText('Happy New Year', TextStyleType.style6, true);
     const [text2, setBegin2, isEnd2] = useText('My Baby', TextStyleType.style6, true);
     const [text3, setBegin3, isEnd3] = useText('Best Wishes To You', TextStyleType.style6, true);
