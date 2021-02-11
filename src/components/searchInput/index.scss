@@ -1,0 +1,60 @@
+.search-input{
+    position: relative;
+    input{
+        border: 2px solid #ffffff;
+        border-radius: 40px;
+        color: #fff;
+        background: rgba(255,255,255,0.1);
+        height: 80px;
+        width: 550px;
+        outline: none;
+        padding-left: 30px;
+        font-size: 32px;
+        vertical-align: middle;
+        box-shadow: 0 0 20px #03bcf4;
+    }
+    button{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: none;
+        padding: 0;
+        background: none;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        outline: none;
+        &:after{
+            content: "";
+            width: 70px;
+            height: 70px;
+            display: inline-block;
+            vertical-align: middle;
+            background: url(./img/arrow.png) no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+    p{
+        color: #b36666;
+        font-size: 24px;
+        padding-left: 30px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -70px;
+    }
+    &.error{
+        input{
+            border: 2px solid #b36666;
+            color: #b36666; 
+            box-shadow: 0 0 20px #b36666;
+        }
+        button{
+            &:after{
+                background: url(./img/arrow-error.png) no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+    }
+}
