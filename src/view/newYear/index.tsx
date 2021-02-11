@@ -15,13 +15,15 @@ const NewYear: React.FC<PropType> = (props: PropType) => {
     const [text1, setBegin1, isEnd1] = useText('Happy New Year', TextStyleType.style6, true);
     const [text2, setBegin2, isEnd2] = useText('My Baby', TextStyleType.style6, true);
     const [text3, setBegin3, isEnd3] = useText('Best Wishes To You', TextStyleType.style6, true);
-    const [text4, setBegin4, isEnd4, setVisible4] = useText('I Have Prepared The Most Beautiful Fireworks For You ！', TextStyleType.style2, true);
-    const [text5, setBegin5, isEnd5, setVisible5] = useText('Are You Ready ?', TextStyleType.style2, true);
-    const [text6, setBegin6, isEnd6, setVisible6] = useText(`Let's count down ! ! !`, TextStyleType.style2, true);
-    const [text7, setBegin7, isEnd7, setVisible7] = useText('3', TextStyleType.style5, true);
-    const [text8, setBegin8, isEnd8, setVisible8] = useText('2', TextStyleType.style5, true);
-    const [text9, setBegin9, isEnd9, setVisible9] = useText('1', TextStyleType.style5, true);
-    const [text10, setBegin10, isEnd10] = useText('0', TextStyleType.style5, true);
+    const [text4, setBegin4, isEnd4, setVisible4] = useText('I Heard That You like fireworks', TextStyleType.style2, true);
+    const [text5, setBegin5, isEnd5, setVisible5] = useText('I Have Prepared It For You', TextStyleType.style2, true);
+    const [text6, setBegin6, isEnd6, setVisible6] = useText('Wish You Like It', TextStyleType.style2, true);
+    const [text7, setBegin7, isEnd7, setVisible7] = useText('So, Are You Ready ?', TextStyleType.style2, true);
+    const [text8, setBegin8, isEnd8, setVisible8] = useText(`Let's count down ! ! !`, TextStyleType.style2, true);
+    const [text9, setBegin9, isEnd9, setVisible9] = useText('3', TextStyleType.style5, true);
+    const [text10, setBegin10, isEnd10, setVisible10] = useText('2', TextStyleType.style5, true);
+    const [text11, setBegin11, isEnd11, setVisible11] = useText('1', TextStyleType.style5, true);
+    const [text12, setBegin12, isEnd12] = useText('0', TextStyleType.style5, true);
     useEffect(()=>{
         setStarrysky(true);
         props.setMusicVisible && props.setMusicVisible();
@@ -146,13 +148,39 @@ const NewYear: React.FC<PropType> = (props: PropType) => {
     useEffect(()=>{
         if(isEnd10){
             const timer = window.setTimeout(()=>{
-                history.push('/firework');
+                setVisible10(false);
+                window.setTimeout(()=>{
+                    setBegin11(true);
+                },1000);
             },1000);
             return ()=>{
                 window.clearTimeout(timer);
             };
         }
     },[isEnd10]);
+    useEffect(()=>{
+        if(isEnd11){
+            const timer = window.setTimeout(()=>{
+                setVisible11(false);
+                window.setTimeout(()=>{
+                    setBegin12(true);
+                },1000);
+            },1000);
+            return ()=>{
+                window.clearTimeout(timer);
+            };
+        }
+    },[isEnd11]);
+    useEffect(()=>{
+        if(isEnd12){
+            const timer = window.setTimeout(()=>{
+                history.push('/firework');
+            },1000);
+            return ()=>{
+                window.clearTimeout(timer);
+            };
+        }
+    },[isEnd12]);
     
     return(
         <>
@@ -171,6 +199,8 @@ const NewYear: React.FC<PropType> = (props: PropType) => {
                     {text8}
                     {text9}
                     {text10}
+                    {text11}
+                    {text12}
                 </div>
                
             </div>
