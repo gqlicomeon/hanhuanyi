@@ -46,7 +46,7 @@ const SearchInput: React.FC<PropType> = (props: PropType) => {
 
     const onClick = () => {
         const str = delSpace(inputValue);
-        if( str === '0820'){
+        if( str === '0822'){
             success();
         }else if(str === ""){
             setIsSpace(true);
