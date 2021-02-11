@@ -10,7 +10,7 @@ interface PropType {
 }
 const Home: React.FC<PropType> = (props: PropType) => {
     const history = useHistory();
-    const [content, setVisible] = useIframe('http://www.hanhuanyi.top:3000/starryrain/');
+    const [content, setVisible] = useIframe('http://120.76.196.121:3000/starryrain/');
     const [hanHuanYi] = useText('HanHuanYi', TextStyleType.style5);
     const successInput = () => {
         props.success && props.success();
