@@ -13,11 +13,13 @@ const Personal: React.FC<PropType> =  function Personal(props: PropType){
     const {iconUrl,quote="",isNavOpen} = props;
     const [text, setBegin] = useText(quote, TextStyleType.style4, true);
     useEffect(()=>{
-        const timer = window.setTimeout(()=>{
-            setBegin(true);
-        },2000);
-        return ()=>{
-            window.clearTimeout(timer);
+        if(isNavOpen){
+            const timer = window.setTimeout(()=>{
+                setBegin(true);
+            },1500);
+            return ()=>{
+                window.clearTimeout(timer);
+            }
         }
     }, [quote,isNavOpen]);
 
