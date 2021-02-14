@@ -4,7 +4,7 @@ import useIframe from '../../hooks/useIframe';
 import './index.scss';
 
 const Cherryrain: React.FC = () => {
-    const [cherryrain] = useIframe('http://127.0.01:3000/cherryrain/');
+    const [cherryrain] = useIframe('http://120.76.196.121:3000/cherryrain/');
 
     return(
         <>
