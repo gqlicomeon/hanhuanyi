@@ -63,7 +63,7 @@ const SearchInput: React.FC<PropType> = (props: PropType) => {
                     placeholder={placeholder}
                     onChange={onChange}
                 />
-                <button onClick={onClick}></button>
+                <button onClick={onClick}><i></i></button>
                 {
                     isError 
                     ? <p>你输入的生日不正确哦，请再想想吧~</p>

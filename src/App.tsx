@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   HashRouter as Router,
   Switch,
@@ -8,10 +8,14 @@ import './App.scss';
 import Home from './view/home';
 import NewYear from './view/newYear';
 import FireWork from './view/fireWork';
-import UseMusic from './hooks/useMusic';
+import Cherryrain from './view/cherryrain';
+import Valentine from './view/valentine';
+import useMusic from './hooks/useMusic';
+import Guide from './view/guide';
+import NavContent from './components/navContent';
 
 const App: React.FC = ()=>{
-  const [AudioContent, setVisible, playAudio, isPlay] = UseMusic('/somedayOrOneDay.mp3');
+  const [AudioContent, setMusicSrc, setMusicVisible, playAudio, isPlay] = useMusic('/IAmWait.mp3');
   // 添加文字效果
   const addWordStyle = useCallback(()=>{
     const signs = document.querySelectorAll('.x-sign');
@@ -30,17 +34,6 @@ const App: React.FC = ()=>{
     });
   },[]);
 
-  const playMusic = useCallback(()=>{
-    if(!isPlay){
-      setVisible(true);
-      playAudio();
-    }
-  },[playAudio,setVisible]);
-
-  const setMusicVisible = useCallback(()=>{
-    setVisible(true)
-  }, [setVisible]);
-
   useEffect(()=>{
     addWordStyle();
   },[]);
@@ -49,15 +42,33 @@ const App: React.FC = ()=>{
     <>
       {AudioContent}
       <Router>
+        <NavContent 
+          photo={['/logo.jpg']} 
+          quote='我们这一生要对抗的是虚荣和虚空'  
+          introduce='HanHuanYi' 
+          setMusicSrc={setMusicSrc}
+          setMusicVisible={setMusicVisible}
+          playAudio={playAudio}
+          isPlay={isPlay}
+        />
         <Switch>
           <Route exact path="/">
-            <Home success={playMusic}/>
+            <Home  playAudio={playAudio}/>
+          </Route>
+          <Route exact path="/guide">
+            <Guide />
           </Route>
           <Route exact path="/newyear">
-            <NewYear setMusicVisible={setMusicVisible}/>
+            <NewYear />
           </Route>
           <Route exact path="/firework">
-            <FireWork setMusicVisible={setMusicVisible}/>
+            <FireWork />
+          </Route>
+          <Route exact path="/valentine">
+            <Valentine />
+          </Route>
+          <Route exact path="/cherryrain">
+            <Cherryrain />
           </Route>
         </Switch>
       </Router>

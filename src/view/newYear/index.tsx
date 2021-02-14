@@ -5,13 +5,10 @@ import useText, { TextStyleType } from '../../hooks/useText';
 
 import './index.scss';
 
-interface PropType{
-    setMusicVisible?():void;
-}
-const NewYear: React.FC<PropType> = (props: PropType) => {
+const NewYear: React.FC = () => {
     const history = useHistory();
     const [isConten1End, setIsConten1End] = useState<boolean>(false);
-    const [starrysky, setStarrysky] = useIframe('http://120.76.196.121:3000/starrysky/');
+    const [starrysky] = useIframe('http://120.76.196.121:3000/starrysky/');
     const [text1, setBegin1, isEnd1] = useText('Happy New Year', TextStyleType.style6, true);
     const [text2, setBegin2, isEnd2] = useText('My Baby', TextStyleType.style6, true);
     const [text3, setBegin3, isEnd3] = useText('Best Wishes To You', TextStyleType.style6, true);
@@ -25,8 +22,6 @@ const NewYear: React.FC<PropType> = (props: PropType) => {
     const [text11, setBegin11, isEnd11, setVisible11] = useText('1', TextStyleType.style5, true);
     const [text12, setBegin12, isEnd12] = useText('0', TextStyleType.style5, true);
     useEffect(()=>{
-        setStarrysky(true);
-        props.setMusicVisible && props.setMusicVisible();
         const timer = window.setTimeout(()=>{
             setBegin1(true);
         },2000);

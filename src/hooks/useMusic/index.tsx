@@ -1,6 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import './index.scss';
+
 export default function UseMusic(src: string){
+    const [musicSrc, setMusicSrc] = useState<string>(src);
     const [visible, setVisible] = useState<boolean>(false);
     const [isPlay, setIsPlay] = useState<boolean>(false);
     const playAudio = useCallback(()=>{
@@ -38,10 +40,10 @@ export default function UseMusic(src: string){
                     }
                 </div>
                 <div className="fullpage-music">
-                    <audio className="full-music" src={src} loop></audio>
+                    <audio className="full-music" src={musicSrc} loop></audio>
                 </div>
             </div>
         </>
     );
-    return [content, setVisible, playAudio, isPlay] as const;
+    return [content, setMusicSrc, setVisible, playAudio, isPlay] as const;
 }

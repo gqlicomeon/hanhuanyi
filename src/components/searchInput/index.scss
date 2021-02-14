@@ -25,8 +25,7 @@
         top: 50%;
         transform: translateY(-50%);
         outline: none;
-        &:after{
-            content: "";
+        i{
             width: 70px;
             height: 70px;
             display: inline-block;
@@ -51,7 +50,7 @@
             box-shadow: 0 0 20px #b36666;
         }
         button{
-            &:after{
+            i{
                 background: url(./img/arrow-error.png) no-repeat;
                 background-size: 100% 100%;
             }

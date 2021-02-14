@@ -4,21 +4,17 @@ import useIframe from '../../hooks/useIframe';
 import useText, { TextStyleType } from '../../hooks/useText';
 import SearchInput from '../../components/searchInput/index';
 import './index.scss';
-
-interface PropType {
-    success?():void;
+interface PropType{
+    playAudio():void;
 }
-const Home: React.FC<PropType> = (props: PropType) => {
+const Home: React.FC<PropType>= (prop: PropType) => {
     const history = useHistory();
-    const [content, setVisible] = useIframe('http://120.76.196.121:3000/starryrain/');
+    const [content] = useIframe('http://120.76.196.121:3000/starryrain/');
     const [hanHuanYi] = useText('HanHuanYi', TextStyleType.style5);
     const successInput = () => {
-        props.success && props.success();
-        history.push('/newyear');
+        history.push('/valentine');
+        prop.playAudio();
     }
-    useEffect(()=>{
-        setVisible(true);
-    },[]);
 
     return (
         <div className="home">

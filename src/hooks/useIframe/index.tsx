@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './index.scss';
 
-export default function useIframe(src: string){
-    const [visible, setVisible] = useState<boolean>(false);
+export default function useIframe(src: string, initalState: boolean = true){
+    const [visible, setVisible] = useState<boolean>(initalState);
     const content = (
         <>
             <iframe 

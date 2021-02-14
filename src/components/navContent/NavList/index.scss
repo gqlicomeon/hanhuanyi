@@ -1,0 +1,58 @@
+@keyframes moveFromLeft{
+    0%{
+        left: -20%;
+    }
+    100%{
+        left: 120%;
+    }
+}
+
+@keyframes click{
+    0%{
+        top: -40px;
+    }
+    100%{
+        top: -20px;
+    }
+}
+
+nav{
+    .go{
+        width: 80px;
+        height: 80px;
+        background: url(./go.png) no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        animation: moveFromLeft 10s ease-in-out 0s infinite;
+        z-index: 1;
+    }
+    .click-me{
+        width: 60px;
+        height: 60px;
+        background: url(./hand-down.png) no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        animation: click 2s linear 0s infinite alternate both;
+    }
+    ul{
+        text-align: center;
+        list-style-type: none;
+        padding: 0;
+    }
+    li{
+        display: inline-block;
+        padding: 0 20px;
+        font-size: 36px;
+        color: #25c2d6;
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+}
