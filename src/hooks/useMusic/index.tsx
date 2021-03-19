@@ -9,12 +9,12 @@ export default function UseMusic(src: string){
         const audioEle: HTMLAudioElement | null = document.querySelector('.fullpage-music .full-music');
         audioEle?.play();
         setIsPlay(true);
-    },[]);
+    },[musicSrc]);
     const pauseAudio = useCallback(()=>{
         const audioEle: HTMLAudioElement | null = document.querySelector('.fullpage-music .full-music');
         audioEle?.pause();
         setIsPlay(false);
-    },[]);
+    },[musicSrc]);
 
     const switchAudio = useCallback(()=>{
         if(isPlay){
@@ -22,7 +22,7 @@ export default function UseMusic(src: string){
         }else{
             playAudio();
         }
-    },[isPlay,playAudio, pauseAudio]);
+    },[isPlay, playAudio, pauseAudio]);
 
     const content = (
         <>

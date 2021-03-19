@@ -3,6 +3,7 @@ import {useLocation} from "react-router-dom";
 
 import NavList from "./NavList";
 import Personal from "./Personal";
+import NavFoot from "./NavFoot";
 
 import UseText, {TextStyleType} from "../../hooks/useText";
 
@@ -44,7 +45,7 @@ const NavContent: React.FC<PropType> = function NavContent(prop: PropType){
     },[pathname]);
     return (
         <>      
-            <button className={pathname === "/" ? "nav__bar hide" : "nav__bar"} onTouchEnd={()=>setNavOpen(state=>!state)}>
+            <button className={pathname === "/" ? "nav__bar hide" : "nav__bar"} onClick={()=>setNavOpen(state=>!state)}>
                 <i className={isNavOpen ? "nav__close" : "nav__open"}></i>
             </button>
             <div className={isNavOpen ? "nav__content down" : "nav__content"}>
@@ -53,7 +54,7 @@ const NavContent: React.FC<PropType> = function NavContent(prop: PropType){
                <div className="guide-nav">
                     <NavList setNavOpen={setNavOpen} playAudio={playAudio}/>
                </div>
-               {/* <NavFoot /> */}
+               <NavFoot />
             </div>
         </>
     )

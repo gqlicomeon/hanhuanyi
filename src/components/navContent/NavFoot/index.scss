@@ -1,19 +1,21 @@
 .nav__foot{
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     left: 0;
     width: 100%;
     p{
         text-align: center;
-        color: #07dbf7;
+        color: rgba(255,255,255,0.5);
         font-size: 24px;
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
     }
 }
-.icon__box{
-    text-align: center;
-    margin-bottom: 90px;
-    font-size: 58px;
-    a{
-        margin: 0 20px;
+
+@media only screen and (min-width: 750px) {
+    .nav__foot{
+        bottom: 0;
     }
 }

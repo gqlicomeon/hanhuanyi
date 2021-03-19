@@ -15,7 +15,7 @@ import Guide from './view/guide';
 import NavContent from './components/navContent';
 
 const App: React.FC = ()=>{
-  const [AudioContent, setMusicSrc, setMusicVisible, playAudio, isPlay] = useMusic('/IAmWait.mp3');
+  const [AudioContent, setMusicSrc, setMusicVisible, playAudio, isPlay] = useMusic('/somedayOrOneDay.mp3');
   // 添加文字效果
   const addWordStyle = useCallback(()=>{
     const signs = document.querySelectorAll('.x-sign');

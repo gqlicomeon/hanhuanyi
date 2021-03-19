@@ -1,0 +1,13 @@
+.text-content-guide{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    left: 0;
+    text-align: center;
+    .x-sign{
+        font-family: "楷体","楷体_GB2312";
+        font-size: 42px;
+        margin: 20px 0;
+    }
+}
