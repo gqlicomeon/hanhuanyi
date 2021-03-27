@@ -5,7 +5,7 @@ import "./index.scss";
 
 const Guide: React.FC = function(){
     const [starrysky] = useIframe('http://120.76.196.121:3000/starryrain/');
-    const [text1, setBegin1, isEnd1] = useText("韩环艺", TextStyleType.style5, true, 400);
+    const [text1, setBegin1, isEnd1] = useText("韩环亦", TextStyleType.style5, true, 400);
     const [text2, setBegin2] = useText("喜欢你是我做过最有耐心的一件事", TextStyleType.style5, true, 300);
     useEffect(()=>{
         const timer = window.setTimeout(()=>{
