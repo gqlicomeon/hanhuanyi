@@ -31,11 +31,11 @@ const NavContent: React.FC<PropType> = function NavContent(prop: PropType){
                 setMusicVisible(false);
                 break;
             case "/newyear":
-                setMusicSrc('/somedayOrOneDay.mp3');
+                setMusicSrc('http://120.76.196.121:3000/assets/media/somedayOrOneDay.mp3');
                 setMusicVisible(true);
                 break;
             case "/valentine":
-                setMusicSrc('/IAmWait.mp3');
+                setMusicSrc('http://120.76.196.121:3000/assets/media/IAmWait.mp3');
                 setMusicVisible(true);
                 break;
             default:
