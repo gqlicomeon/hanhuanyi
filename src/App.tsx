@@ -14,6 +14,7 @@ import Birthday from './view/birthday';
 import useMusic from './hooks/useMusic';
 import Guide from './view/guide';
 import NavContent from './components/navContent';
+import ExcelKiller from './view/excelKiller';
 
 const App: React.FC = ()=>{
   const [AudioContent, setMusicSrc, setMusicVisible, playAudio, isPlay] = useMusic('http://120.76.196.121:3000/assets/media/FreeLoop.mp3');
@@ -73,6 +74,9 @@ const App: React.FC = ()=>{
           </Route>
           <Route exact path="/birthday">
             <Birthday />
+          </Route>
+          <Route exact path="/excel-killer">
+            <ExcelKiller />
           </Route>
         </Switch>
       </Router>

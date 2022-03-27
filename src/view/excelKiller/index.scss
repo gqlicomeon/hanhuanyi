@@ -1,0 +1,83 @@
+.excel-killer {
+    height: 100%;
+    z-index: 9999;
+    position: relative;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &-content {
+        .upload {
+            margin-bottom: 10px;
+            &-files {
+                padding: 10px 0;
+                display: flex;
+
+                .file-tag {
+                    background-color: #ececec;
+                    font-size: 8px;
+                    padding: 5px 15px 5px 10px;
+                    border-radius: 4px;
+                    position: relative;
+                    margin-right: 4px;
+                    .name {
+                        color: #03a9f4;
+                        margin-right: 4px;
+                    }
+                    .close-btn {
+                        position: absolute;
+                        right: 6px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        &:hover {
+                            cursor: pointer;
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+        .excel-upload-content {
+            height: 200px;
+            border: 1px dashed #ddd;
+            background-color: #ececec;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            &:hover{
+                border-color: #03a9f4;
+                color: #03a9f4;
+            }
+        }
+        .config {
+            &-item {
+                margin-bottom: 4px;
+            }
+        }
+        .last {
+            button {
+                width: 150px;
+                height: 50px;
+                font-size: 24px;
+                border-radius: 24px;
+                border: none;
+                background:#03a9f4;
+                color: #fff;
+                &:hover {
+                    cursor: pointer;
+                    background: #2196f3;
+                }
+                &:disabled {
+                    background: #f3f3f3;
+                    color: #ddd;
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+    }
+    
+}
