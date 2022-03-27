@@ -13,7 +13,7 @@ const Home: React.FC<PropType>= (prop: PropType) => {
     const [content] = useIframe('http://120.76.196.121:3000/starryrain/');
     const [hanHuanYi] = useText('HanHuanYi', TextStyleType.style5);
     const successInput = () => {
-        history.push('/guide');
+        history.push('/birthday');
         prop.playAudio();
     }
 

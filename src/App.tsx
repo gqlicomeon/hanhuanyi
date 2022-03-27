@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import {
   HashRouter as Router,
   Switch,
@@ -10,12 +10,13 @@ import NewYear from './view/newYear';
 import FireWork from './view/fireWork';
 import Cherryrain from './view/cherryrain';
 import Valentine from './view/valentine';
+import Birthday from './view/birthday';
 import useMusic from './hooks/useMusic';
 import Guide from './view/guide';
 import NavContent from './components/navContent';
 
 const App: React.FC = ()=>{
-  const [AudioContent, setMusicSrc, setMusicVisible, playAudio, isPlay] = useMusic('/somedayOrOneDay.mp3');
+  const [AudioContent, setMusicSrc, setMusicVisible, playAudio, isPlay] = useMusic('/FreeLoop.mp3');
   // 添加文字效果
   const addWordStyle = useCallback(()=>{
     const signs = document.querySelectorAll('.x-sign');
@@ -69,6 +70,9 @@ const App: React.FC = ()=>{
           </Route>
           <Route exact path="/cherryrain">
             <Cherryrain />
+          </Route>
+          <Route exact path="/birthday">
+            <Birthday />
           </Route>
         </Switch>
       </Router>
